@@ -10,5 +10,11 @@
 #settings-drawer label{display:grid;gap:8px}#home-button{margin-top:28px!important}.settings-caption{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:#dbbd84}
 #settings-drawer p[role=status]{font-size:.85rem;line-height:1.5}#settings-drawer p:empty{display:none}
 .settings-launch:focus-visible,#settings-drawer :focus-visible{outline:3px solid #ffe08b;outline-offset:3px}
-body.settings-open{overflow:hidden}.gamebox-heading{padding-top:30px}
+body.settings-open{overflow:hidden}
 @media(prefers-reduced-motion:reduce){#settings-drawer{transition:none}}
+
+/* The menu toolbar shares the GameBox palette; stays fixed inside games. */
+body:has(.gamebox-lounge:not(.hidden)) .settings-launch{position:absolute;top:max(30px,env(safe-area-inset-top));right:max(22px,calc((100vw - 1080px)/2));background:#ffffff08;border-color:#fff2cf26;color:#fff2cf;box-shadow:none;font-weight:700;transition:background .15s,transform .15s}
+body:has(.gamebox-lounge:not(.hidden)) .settings-launch:hover{background:#ffffff14}
+.settings-launch:active{transform:translateY(2px)}
+@media(max-width:560px){body:has(.gamebox-lounge:not(.hidden)) .settings-launch{top:max(22px,env(safe-area-inset-top))}}

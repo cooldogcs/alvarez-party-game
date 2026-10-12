@@ -1,9 +1,28 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#102f2b"><title>GameBox | Family Game Night</title><link rel="stylesheet" href="styles.css"><style>#game-view{position:fixed;inset:0;z-index:100;background:#102f2b;display:flex;flex-direction:column}#game-view.hidden{display:none}#game-view nav{padding:8px 16px;background:#102f2b}#game-view button{border:1px solid #edc575;background:#163d36;color:#fff;padding:9px 16px;border-radius:10px;font:inherit}#game-frame{border:0;width:100%;flex:1;min-height:0}.gamebox-controls{margin-top:20px}.gamebox-controls button{border:1px solid #edc575;background:#163d36;color:#fff;padding:12px 20px;border-radius:12px;font:inherit;cursor:pointer}.gamebox-controls button:focus-visible{outline:3px solid #edc575;outline-offset:4px}#fullscreenStatus{font-size:.9rem}</style><link rel="stylesheet" href="settings.css"></head><body>  <section id="gamebox-home" class="gamebox-home" aria-labelledby="gamebox-title">
-    <header class="gamebox-heading"><span class="gamebox-kicker">FAMILY GAME NIGHT</span><h1 id="gamebox-title">Game<span>Box</span></h1><p>Your favourite people. A table full of games.</p></header>
-    <main class="gamebox-library"><div class="gamebox-section-title"><h2>Choose your game</h2><span>1 game available</span></div>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#10242d"><title>GameBox | Family Game Night</title><link rel="stylesheet" href="styles.css"><style>#game-view{position:fixed;inset:0;z-index:100;background:#102f2b;display:flex;flex-direction:column}#game-view.hidden{display:none}#game-view nav{padding:8px 16px;background:#102f2b}#game-view button{border:1px solid #edc575;background:#163d36;color:#fff;padding:9px 16px;border-radius:10px;font:inherit}#game-frame{border:0;width:100%;flex:1;min-height:0}.gamebox-controls{margin-top:20px}.gamebox-controls button{border:1px solid #edc575;background:#163d36;color:#fff;padding:12px 20px;border-radius:12px;font:inherit;cursor:pointer}.gamebox-controls button:focus-visible{outline:3px solid #edc575;outline-offset:4px}#fullscreenStatus{font-size:.9rem}</style><link rel="stylesheet" href="settings.css"></head><body>  <section id="gamebox-home" class="gamebox-home gamebox-lounge" aria-labelledby="gamebox-title">
+    <header class="gamebox-heading">
+      <span class="gamebox-kicker"><span aria-hidden="true">✦</span> FAMILY GAME NIGHT</span>
+      <div class="gamebox-brand">
+        <svg class="gamebox-logo" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+          <rect x="22" y="9" width="34" height="48" rx="6" fill="#fff2cf" stroke="#10242d" stroke-width="3" transform="rotate(-14 39 33)"/>
+          <path d="M39 24c-8-9-18 4 0 16 18-12 8-25 0-16" fill="#dd686a"/>
+          <rect x="53" y="21" width="32" height="32" rx="8" fill="#80bdb2" stroke="#10242d" stroke-width="3" transform="rotate(12 69 37)"/>
+          <g fill="#10242d"><circle cx="62" cy="29" r="2.5"/><circle cx="76" cy="32" r="2.5"/><circle cx="69" cy="37" r="2.5"/><circle cx="61" cy="42" r="2.5"/><circle cx="75" cy="45" r="2.5"/></g>
+          <path d="M12 49 49 61 88 49 88 80 50 94 12 80Z" fill="#f6c64c" stroke="#10242d" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M12 49 49 61 50 94" fill="#d59b31"/><path d="M12 49 49 61 88 49M49 61 50 94" fill="none" stroke="#fff2cf" stroke-width="2"/>
+          <path d="m64 70 5-2" stroke="#10242d" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <h1 id="gamebox-title">Game<span>Box</span></h1>
+      </div>
+      <p>Good company. Great games.</p>
+      <div class="gamebox-tabletop" aria-hidden="true">
+        <span class="menu-card menu-card-back">✦</span><span class="menu-card menu-card-front">A<span>♥</span></span>
+        <span class="menu-die">⚄</span><span class="menu-chip">★</span><span class="menu-spark spark-one">✦</span><span class="menu-spark spark-two">✧</span>
+      </div>
+    </header>
+    <main class="gamebox-library"><div class="gamebox-section-title"><h2>What are we playing?</h2><span>2 games available</span></div>
       <div id="gamebox-games" class="gamebox-grid"></div>
-      <aside class="gamebox-coming"><span aria-hidden="true">✦</span><div><h3>There’s room for more</h3><p>More card games, dice games and family favourites can join the box.</p></div></aside>
-    </main><footer>Gather round. Pick a game. Let’s play.</footer>
+
+    </main><footer><span aria-hidden="true">✦</span> Gather round. Pick a game. Let’s play.</footer>
   </section>
 <section id="game-view" class="hidden"><iframe id="game-frame" title="¡ALDELIR! Family Party Game" allow="fullscreen; autoplay" allowfullscreen></iframe></section><button id="settings-open" class="settings-launch" type="button" aria-controls="settings-drawer" aria-expanded="false" aria-label="Open settings">⚙ <span>Settings</span></button>
 <div id="settings-backdrop" hidden></div>
