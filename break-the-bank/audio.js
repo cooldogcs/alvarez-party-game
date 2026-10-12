@@ -22,7 +22,7 @@ case 'draw':notes([440,440],t,.11,.12);break;
 case 'loss':notes([330,262,196],t,.1,.2);break;
 case 'bust':tone(220,t,.36,.14,'triangle',75);noise(t,.09,.08);break;
 case 'victory':notes([523,659,784,1047,784,1047,1319],t,.15,.4);[0,.16,.32,.48,.64].forEach(offset=>coin(t+offset));break;
-case 'house':notes([392,330,262,196],t,.16,.3);break;
+case 'house':noise(t,.18,.12);tone(80,t+.1,.42,.2,'triangle',35);tone(180,t+.12,.12,.10,'triangle',60);notes([392,330,262,196],t+.2,.16,.3);break;
 }}catch{}}
 function setEnabled(value){enabled=!!value;if(!enabled)stop();try{localStorage.setItem(key,enabled?'on':'off');}catch{}if(enabled)play('click');}
 document.addEventListener('pointerdown',()=>{void unlock();},{capture:true,passive:true});
