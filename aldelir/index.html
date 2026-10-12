@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#102f2b">
+  <title>¡ALDELIR! El Gran Juego de la Familia</title>
+  <link rel="stylesheet" href="styles.css?v=17">
+</head>
+<body>
+  <div id="app" class="app round-theme-0">
+    <div class="courtyard" aria-hidden="true">
+      <div class="moon"></div>
+      <div class="stars"></div>
+      <div class="light-string lights-one"></div>
+      <div class="light-string lights-two"></div>
+      <div class="papel papel-a">✦</div><div class="papel papel-b">❖</div><div class="papel papel-c">✿</div>
+      <div class="papel papel-d">❖</div><div class="papel papel-e">✦</div><div class="papel papel-f">✿</div>
+    </div>
+
+    <div class="audio-controls" aria-label="Audio controls">
+      <button id="musicToggle" type="button" aria-pressed="false">♫ Music off</button>
+      <button id="voiceToggle" type="button" aria-pressed="false">🗣 Voz apagada</button>
+      <button id="soundToggle" type="button" aria-pressed="true">♪ Sound on</button>
+    </div>
+    <button id="fullscreenToggle" class="fullscreen-toggle" type="button" aria-pressed="false" aria-label="Enter full screen">⛶ <span>Full screen</span></button>
+    <div id="voiceStatus" class="audio-status hidden" role="status"></div>
+    <div id="fullscreenStatus" class="fullscreen-status hidden" role="status"></div>
+    <header class="brand">
+      <div class="wood-sign">
+        <span class="brand-small">EL GRAN JUEGO DE LA FAMILIA</span>
+        <h1>¡ALDELIR!</h1>
+        <span class="brand-tagline">Una familia. Dos barajas. Mucho caos.</span>
+      </div>
+    </header>
+
+    <main>
+      <section id="s-setup" class="screen">
+        <div class="panel papel-panel">
+          <div class="ornament">❖ ✿ ❖</div>
+          <h2>¿CUÁNTOS JUGADORES?</h2>
+          <p class="english">HOW MANY PLAYERS?</p>
+          <div id="counts" class="player-counts"></div>
+          <div id="dealInfo" class="notice"></div>
+          <button id="setupNext" class="btn btn-primary">CONTINUAR <small>NEXT</small> ›</button>
+        </div>
+      </section>
+
+      <section id="s-names" class="screen hidden">
+        <div class="panel papel-panel">
+          <div class="ornament">✿ ❖ ✿</div>
+          <h2>NOMBRES</h2><p class="english">PLAYER NAMES</p>
+          <div id="nameFields" class="name-grid"></div>
+          <p id="nameErr" class="error" role="alert"></p>
+          <button id="namesNext" class="btn btn-primary">PREPARAR <small>CONTINUE</small> ›</button>
+        </div>
+      </section>
+
+      <section id="s-deal" class="screen hidden">
+        <div class="panel papel-panel center">
+          <div id="dealRound" class="eyebrow"></div>
+          <div class="deck-art" aria-hidden="true"><span>♠</span><span class="red">♥</span></div>
+          <h2 id="dealTitle">¡NUEVA MANO!</h2>
+          <p id="dealSubtitle" class="english">NEW HAND!</p>
+          <div class="instruction-card">
+            <p>Mezcla las <strong>dos barajas</strong>.</p>
+            <p class="english">Shuffle both decks together.</p>
+            <div id="dealBig" class="deal-big"></div>
+            <p>Coloca todas las cartas <strong>boca arriba</strong>.</p>
+            <p class="english">Place all cards face up.</p>
+          </div>
+          <button id="dealReady" class="btn btn-primary btn-big">✓ TODOS LISTOS <small>EVERYONE READY</small></button>
+        </div>
+      </section>
+
+      <section id="s-round" class="screen hidden">
+        <div class="panel round-panel center">
+          <div id="roundNo" class="eyebrow"></div>
+          <div id="roundIcon" class="round-icon"></div>
+          <h2 id="roundEs"></h2>
+          <p id="roundEn" class="round-en"></p>
+          <div class="instruction-card">
+            <p id="objectiveEs" class="objective"></p>
+            <p id="objectiveEn" class="english"></p>
+          </div>
+          <div id="doublePoints" class="double-points hidden">🔥 PUNTOS DOBLES / DOUBLE POINTS 🔥</div>
+          <div id="roundPoints" class="points"></div>
+          <button id="roundStart" class="btn btn-primary btn-big">▶ EMPEZAR <small>START</small></button>
+        </div>
+      </section>
+
+      <section id="s-game" class="screen hidden">
+        <div id="scores" class="score-grid"></div>
+        <div class="game-table">
+          <div class="game-status"><span id="liveRound"></span><span id="callNum"></span></div>
+          <div id="playingCard" class="playing-card">
+            <div class="corner top"><span id="cornerRank1">?</span><span id="cornerSuit1">♠</span></div>
+            <div id="rank" class="card-rank">?</div>
+            <div id="suit" class="card-suit">♠</div>
+            <div class="corner bottom"><span id="cornerRank2">?</span><span id="cornerSuit2">♠</span></div>
+          </div>
+          <div id="cardEs" class="card-name">PREPARADOS...</div>
+          <div id="cardEn" class="english">GET READY...</div>
+          <div id="specialHint" class="round-hint"></div>
+          <div class="controls">
+            <button id="pause" class="btn btn-secondary">⏸ PAUSA <small>PAUSE</small></button>
+            <label class="speed">VELOCIDAD / SPEED
+              <select id="speed">
+                <option value="7500">Lenta / Slow</option>
+                <option value="5500" selected>Normal</option>
+                <option value="4000">Rápida / Fast</option>
+              </select>
+            </label>
+          </div>
+          <button id="alvarez" class="alvarez-buzzer"><span>🔔</span> ¡ALDELIR!</button>
+        </div>
+      </section>
+
+      <section id="s-claim" class="screen hidden">
+        <div class="panel papel-panel center alert-panel">
+          <div class="alarm">🚨 🔔 🚨</div><h2>¡TENEMOS ALDELIR!</h2><p class="english">WE HAVE ALDELIR!</p>
+          <div class="last-card-box"><small>ÚLTIMA CARTA / FINAL CALLED CARD</small><div id="claimLastCard"></div></div>
+          <p><strong>Selecciona a TODOS los que cantaron.</strong><br><span class="english">Select EVERYONE who called Aldelir.</span></p>
+          <div id="claimers" class="claimer-grid"></div>
+          <p id="claimErr" class="error"></p>
+          <button id="verifyClaims" class="btn btn-primary">COMPROBAR <small>VERIFY</small> ›</button>
+        </div>
+      </section>
+
+      <section id="s-verify" class="screen hidden">
+        <div class="panel papel-panel center">
+          <div id="verifyProgress" class="eyebrow"></div><h2 id="verifyName"></h2>
+          <p><strong>¿Completó el reto con la última carta?</strong></p><p class="english">Did they complete the challenge with the final called card?</p>
+          <div class="last-card-box"><small>ÚLTIMA CARTA / FINAL CARD</small><div id="verifyLastCard"></div></div>
+          <details><summary>Ver todas las cartas llamadas / See all called cards</summary><div id="called" class="called-list"></div></details>
+          <div class="verify-buttons">
+            <button id="invalid" class="btn btn-secondary">✕ NO VÁLIDO <small>NOT VALID</small></button>
+            <button id="valid" class="btn btn-primary">✓ GANADOR <small>VALID WINNER</small></button>
+          </div>
+        </div>
+      </section>
+
+      <section id="s-result" class="screen hidden">
+        <div id="celebrationPanel" class="panel papel-panel center celebration-panel">
+          <div class="trophy">🎉🏆🎉</div><h2 id="celebration"></h2><p id="celebrationEn" class="round-en"></p>
+          <div id="winnerNames" class="winner-names"></div><div id="resultPts" class="points"></div>
+          <h3>CLASIFICACIÓN <span class="english-inline">/ SCOREBOARD</span></h3>
+          <div id="resultBoard" class="standings"></div>
+          <button id="nextRound" class="btn btn-primary btn-big">SIGUIENTE RONDA / NEXT ROUND ›</button>
+        </div>
+      </section>
+
+      <section id="s-exhausted" class="screen hidden">
+        <div class="panel papel-panel center">
+          <div class="round-icon">🃏</div>
+          <h2>¡NADIE GANÓ!</h2>
+          <p class="english">NO WINNER THIS HAND</p>
+          <p><strong id="exhaustedSummaryEs"></strong></p>
+          <p id="exhaustedSummaryEn" class="english"></p>
+          <p>Revisen las cartas por si se les pasó alguna. Si nadie completó el reto, mezclen, repartan y repitan esta ronda.</p>
+          <p class="english">Check for missed matches, then redeal and replay this round if nobody completed the challenge.</p>
+          <h3>CARTAS LLAMADAS <span class="english-inline">/ CALLED CARDS</span></h3>
+          <div id="exhaustedCalled" class="called-list exhausted-cards"></div>
+          <p class="notice">La ronda y los puntos acumulados se conservan.<br><span class="english">Same round. Existing scores are kept.</span></p>
+          <button id="replayRound" class="btn btn-primary btn-big">↻ REPARTIR Y REPETIR <small>REDEAL AND REPLAY</small></button>
+        </div>
+      </section>
+
+      <section id="s-champion" class="screen hidden">
+        <div class="panel champion-panel center">
+          <div class="champ-crown">👑</div><div id="champTitleEs" class="champ-title"></div><div id="champTitleEn" class="english"></div>
+          <h2 id="champName" class="champ-name"></h2><div id="champScore" class="points"></div><p id="champMessage"></p>
+          <h3>CLASIFICACIÓN FINAL <span class="english-inline">/ FINAL STANDINGS</span></h3>
+          <div id="finalBoard" class="standings"></div>
+          <button id="newGame" class="btn btn-primary">↻ NUEVO JUEGO <small>NEW GAME</small></button>
+        </div>
+      </section>
+    </main>
+    <div id="confetti" class="confetti" aria-hidden="true"></div>
+    <footer>ALDELIR • FAMILY GAME NIGHT</footer>
+  </div>
+  <script src="game.js?v=17"></script>
+  <script src="layout.js?v=11"></script>
+  <script src="fullscreen.js?v=11"></script>
+  <script src="audio.js?v=11"></script>
+  <script src="voice.js?v=17"></script>
+</body>
+</html>

@@ -1,19 +1,9 @@
-¡ALVAREZ! El Gran Juego de la Familia
+GameBox
 
-Files:
-- index.html
-- styles.css
-- game.js
+Open index.html to choose a game. Keep all files and the aldelir folder together.
 
-Run:
-Open index.html in a modern browser. For best results, serve the folder with any simple local web server.
+Includes the complete ¡ALDELIR! game with Spanish voice calling, witty card announcements, music, sound effects, full screen and refined gameplay.
 
-Rules preserved from v4:
-- 3–8 players
-- Two standard decks
-- Seven rounds
-- Persistent scores
-- Multi-player simultaneous ¡ALVAREZ! claims and individual verification
-- Competition ranking for ties
-- Shared champion support
-- Grand Final: 10 cards per player, first 8 matches, 10 points
+Returning to GameBox pauses calling and stops music and speech. Progress lasts for the current page session.
+
+Published site: https://gamebox.cooldogcs.chatgpt.site
