@@ -71,5 +71,5 @@ $("#invalid").onclick=()=>verifyDecision(false);
 $("#valid").onclick=()=>verifyDecision(true);
 $("#nextRound").onclick=()=>{if(validWinners.length===0){paused=false;show("game");schedule();return}if(round===rounds.length-1)champion();else{round++;paused=false;selected=[];validWinners=[];dealScreen()}};
 $("#replayRound").onclick=()=>{clearTimeout(timer);paused=false;selected=[];validWinners=[];verifyIndex=0;dealScreen()};
-$("#newGame").onclick=()=>{players=[];round=0;selected=[];validWinners=[];pc=6;setTheme();setupCounts();show("setup")};
+$("#newGame").onclick=()=>{clearTimeout(timer);timer=null;window.speechSynthesis?.cancel();players=[];round=0;deck=[];called=[];paused=false;selected=[];verifyIndex=0;validWinners=[];pc=6;$("#confetti").innerHTML="";$("#nameFields").innerHTML="";$("#nameErr").textContent="";$("#claimErr").textContent="";setTheme();setupCounts();show("setup")};
 })();

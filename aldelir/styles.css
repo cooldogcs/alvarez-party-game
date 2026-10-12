@@ -90,3 +90,6 @@
 .round-hint strong {display:block;color:#ffe08b;font-size:1rem;margin-bottom:6px}
 .round-hint .call-pool {font-weight:900;color:#ffe08b;margin-top:6px;font-size:.8rem}
 .round-hint small {display:block;margin-top:5px;font-size:.72rem;opacity:.85}
+
+.audio-controls[hidden],.speed[hidden]{display:none!important}
+.controls{grid-template-columns:1fr}

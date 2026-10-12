@@ -1,0 +1,14 @@
+.settings-launch{position:fixed;top:max(12px,env(safe-area-inset-top));right:max(12px,env(safe-area-inset-right));z-index:110;min-height:44px;padding:10px 15px;border:1px solid #edc575;border-radius:14px;background:#123b34;color:#fff0bd;font:inherit;box-shadow:0 4px 14px #0005;cursor:pointer}
+#settings-backdrop{position:fixed;inset:0;background:#0009;z-index:120}
+#settings-drawer{position:fixed;inset:0 0 0 auto;width:min(360px,100%);z-index:130;background:#102f2b;color:#fff0bd;padding:24px max(22px,env(safe-area-inset-right)) 24px 22px;box-shadow:-12px 0 35px #0005;transform:translateX(105%);visibility:hidden;transition:transform .25s ease,visibility .25s;overflow:auto;overscroll-behavior:contain}
+#settings-drawer.open{transform:translateX(0);visibility:visible}
+#settings-drawer header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px}
+#settings-drawer h2{margin:0;font-size:1.6rem}#settings-drawer h3{margin:26px 0 14px;font-size:1.05rem}
+#settings-drawer button,#settings-drawer select{min-height:48px;padding:12px 14px;background:#19483e;border:1px solid #caa662;border-radius:12px;color:#fff0bd;font:inherit;cursor:pointer;width:100%;text-align:left}
+#settings-drawer button[aria-pressed=true]{background:#306649;border-color:#ffe08b}#settings-drawer button:disabled{opacity:.55}
+#settings-drawer #settings-close{width:48px;text-align:center}#game-settings-controls{display:grid;gap:12px}
+#settings-drawer label{display:grid;gap:8px}#home-button{margin-top:28px!important}.settings-caption{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:#dbbd84}
+#settings-drawer p[role=status]{font-size:.85rem;line-height:1.5}#settings-drawer p:empty{display:none}
+.settings-launch:focus-visible,#settings-drawer :focus-visible{outline:3px solid #ffe08b;outline-offset:3px}
+body.settings-open{overflow:hidden}.gamebox-heading{padding-top:30px}
+@media(prefers-reduced-motion:reduce){#settings-drawer{transition:none}}

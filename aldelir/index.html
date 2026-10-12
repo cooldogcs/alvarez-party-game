@@ -18,7 +18,7 @@
       <div class="papel papel-d">❖</div><div class="papel papel-e">✦</div><div class="papel papel-f">✿</div>
     </div>
 
-    <div class="audio-controls" aria-label="Audio controls">
+    <div class="audio-controls" hidden aria-label="Audio controls">
       <button id="musicToggle" type="button" aria-pressed="false">♫ Music off</button>
       <button id="voiceToggle" type="button" aria-pressed="false">🗣 Voz apagada</button>
       <button id="soundToggle" type="button" aria-pressed="true">♪ Sound on</button>
@@ -102,7 +102,7 @@
           <div id="specialHint" class="round-hint"></div>
           <div class="controls">
             <button id="pause" class="btn btn-secondary">⏸ PAUSA <small>PAUSE</small></button>
-            <label class="speed">VELOCIDAD / SPEED
+            <label class="speed" hidden>VELOCIDAD / SPEED
               <select id="speed">
                 <option value="7500">Lenta / Slow</option>
                 <option value="5500" selected>Normal</option>
@@ -181,5 +181,6 @@
   <script src="layout.js?v=11"></script>
   <script src="audio.js?v=11"></script>
   <script src="voice.js?v=17"></script>
+<script src="settings-adapter.js"></script>
 </body>
 </html>
